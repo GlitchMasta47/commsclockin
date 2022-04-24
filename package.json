@@ -1,0 +1,15 @@
+{
+  "name": "commsclockin",
+  "version": "1.0.0",
+  "description": "Super basic Discord bot that allows clocking in and out of various \"masks\" and importing that data into other places such as Google Sheets.",
+  "main": "src/index.js",
+  "repository": "https://github.com/GlitchMasta47/commsclockin.git",
+  "author": "GlitchMasta47",
+  "license": "MIT",
+  "devDependencies": {
+    "prisma": "^3.12.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.12.0"
+  }
+}

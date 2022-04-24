@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ServerSettings {
+  guild_id BigInt @id // guild id of the server
+  masks String[] // the masks available in this server
+}
+
+model Clockins {
+  user_id BigInt // the user that clocked in
+  guild_id BigInt // guild id of the server they clocked in for
+  mask_name String // name of the mask they clocked in as
+  start_time DateTime @default(now()) // time that they clocked in
+  end_time DateTime? // time that they clocked out
+  @@id([user_id, start_time])
+}
